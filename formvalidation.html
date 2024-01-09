@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Sign Up page</title>
+</head>
+<body>
+	<h1>Create your account </h1>
+	<form>
+		Name 
+		<input type="text" placeholder="Enter your name" id="n1"><br>
+		Email
+		<input type="email" placeholder="Enter your email" id="e1"><br>
+		password
+		<input type="password" placeholder="Enter your password" id="p1"><br>
+		Confirm Password
+		<input type="password" placeholder="Enter your confirm password" id="p2"><br>
+		Phone Number
+		<input type="number" placeholder="Enter your phone number" id="ph1"><br>
+		<input type="submit" value="create"on click="create account()">
+	</form>
+	<script type="text/javascript">
+		function create account()
+		{
+			var n=document.getElementById("n1").value;
+			var e=document.getElementById("e1").value;
+			var p=document.getElementById("p1").value;
+			var cp=document.getElementById("p2").value;
+			var phnum=document.getElementById("ph1").value;
+			var letter=/^[a-zA-Z]/;
+			var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0- 9]{2,})/;
+            var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+if(n==''||e==''||p==''||cp==''||phnum==''){
+alert("Enter each details correctly");
+}
+else if(!letters.test(n))
+{
+alert('Name is incorrect must contain alphabets only');
+}
+else if (!email_val.test(e))
+{
+alert('Invalid email format please enter valid email id');
+}
+else if(!phoneno.test(phnum))
+{
+alert('Invalid phome format please enter valid phone number');
+}
+else if(p!=cp)
+{
+alert("Passwords not matching");
+}
+else if(p.length > 12)
+{
+alert("Password maximum length is 12");
+}
+else if(p.length < 6)
+{
+alert("Password minimum length is 6");
+}
+else{
+alert("Your account has been created successfully... ");
+}
+}
+</script>
+</body>
+</html>
